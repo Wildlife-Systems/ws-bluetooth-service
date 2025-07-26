@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Generate filename based on hostname and current timestamp
+FILENAME="$(hostname)-$(date +%Y%m%d-%H%M%S).log"
+timeout 30 hcitool lescan &
+
+timeout 30 tshark -i bluetooth0 -Y "(bthci_evt.code == 0x2f) || (bthci_evt.le_m>
+
+
+
+
+
