@@ -1,0 +1,35 @@
+#!/bin/bash
+# postinst script for bluetooth-sensor-scanner
+
+set -e
+
+case "$1" in
+    configure)
+        # Make the script executable
+        chmod +x /usr/bin/ws-bluetooth-devices
+        
+        # Reload systemd configuration
+        systemctl daemon-reload
+        
+        # Enable and start the timer
+        systemctl enable ws-bluetooth-scanner.timer
+        systemctl start ws-bluetooth-scanner.timer
+        
+        echo "Bluetooth scanner timer has been enabled and started."
+        echo "It will run every minute. Check status with:"
+        echo "  systemctl status ws-bluetooth-scanner.timer"
+        echo "  systemctl list-timers ws-bluetooth-scanner.timer"
+        echo ""
+        echo "Log files will be created in /var/log/bluetooth-scanner/"
+        ;;
+    
+    abort-upgrade|abort-remove|abort-deconfigure)
+        ;;
+    
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

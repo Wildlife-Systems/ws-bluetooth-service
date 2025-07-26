@@ -1,0 +1,16 @@
+Package: bluetooth-sensor-scanner
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Depends: tshark, bluez, coreutils, systemd
+Maintainer: Natural History Museum <edwab@nhm.ac.uk>
+Description: Bluetooth device scanner for sensor monitoring
+ A utility script that scans for Bluetooth devices and logs their
+ information including MAC addresses, RSSI values, and device names.
+ The script uses tshark and hcitool to capture Bluetooth Low Energy
+ advertising packets and perform device discovery with 30-second timeouts.
+ .
+ Includes a systemd timer that automatically runs the scanner every minute
+ and stores log files in /var/log/bluetooth-scanner/.
+Homepage: https://github.com/nhm/sensor-bluetooth_devices

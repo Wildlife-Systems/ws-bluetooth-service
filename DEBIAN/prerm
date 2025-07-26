@@ -1,0 +1,27 @@
+#!/bin/bash
+# prerm script for bluetooth-sensor-scanner
+
+set -e
+
+case "$1" in
+    remove|upgrade|deconfigure)
+        # Stop and disable the timer
+        systemctl stop ws-bluetooth-scanner.timer || true
+        systemctl disable ws-bluetooth-scanner.timer || true
+        
+        # Stop any running service instances
+        systemctl stop ws-bluetooth-scanner.service || true
+        
+        echo "Bluetooth scanner timer has been stopped and disabled."
+        ;;
+    
+    failed-upgrade)
+        ;;
+    
+    *)
+        echo "prerm called with unknown argument \`$1'" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

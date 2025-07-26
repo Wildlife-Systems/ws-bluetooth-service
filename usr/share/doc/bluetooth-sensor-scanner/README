@@ -1,0 +1,80 @@
+# Bluetooth Sensor Scanner
+
+This package provides a utility script for scanning Bluetooth devices and logging their information, with automatic systemd timer integration.
+
+## Usage
+
+### Manual Execution
+Run the scanner manually:
+```bash
+ws-bluetooth-devices
+```
+
+### Automatic Execution (Default)
+After installation, the scanner automatically runs every minute via systemd timer.
+
+## Systemd Integration
+
+The package includes systemd service and timer files for automatic operation:
+
+- **Service**: `ws-bluetooth-scanner.service`
+- **Timer**: `ws-bluetooth-scanner.timer` (runs every minute)
+
+### Managing the Timer
+
+Check timer status:
+```bash
+sudo systemctl status ws-bluetooth-scanner.timer
+sudo systemctl list-timers ws-bluetooth-scanner.timer
+```
+
+Stop the timer:
+```bash
+sudo systemctl stop ws-bluetooth-scanner.timer
+```
+
+Start the timer:
+```bash
+sudo systemctl start ws-bluetooth-scanner.timer
+```
+
+Disable automatic startup:
+```bash
+sudo systemctl disable ws-bluetooth-scanner.timer
+```
+
+View recent scan logs:
+```bash
+sudo journalctl -u ws-bluetooth-scanner.service -f
+```
+
+## What the Script Does
+
+The script will:
+1. Create the log directory `/var/log/bluetooth-scanner/` if it doesn't exist
+2. Generate a log file named with the hostname and current timestamp
+3. Capture Bluetooth Low Energy advertising packets using tshark
+4. Perform a Bluetooth LE scan using hcitool
+5. Both commands timeout after 30 seconds
+
+## Requirements
+
+- tshark (from wireshark package)
+- bluez (Bluetooth utilities)
+- systemd
+- Bluetooth adapter with monitoring capabilities
+
+## Output
+
+The script creates log files in `/var/log/bluetooth-scanner/` containing:
+- Bluetooth device MAC addresses
+- RSSI values
+- Device names (when available)
+
+Log files are named: `/var/log/bluetooth-scanner/<hostname>-<YYYYMMDD-HHMMSS>.log`
+
+## Notes
+
+- Root privileges are required for Bluetooth monitoring operations
+- The systemd service runs as root automatically
+- Log files accumulate over time; consider setting up log rotation
