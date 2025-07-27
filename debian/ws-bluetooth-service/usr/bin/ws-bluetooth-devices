@@ -4,7 +4,7 @@
 FILENAME="$(hostname)-$(date +%Y%m%d-%H%M%S).log"
 timeout 30 hcitool lescan &
 
-timeout 30 tshark -i bluetooth0 -Y "(bthci_evt.code == 0x2f) || (bthci_evt.le_m>
+timeout 30 tshark -i bluetooth0 -Y "(bthci_evt.code == 0x2f) || (bthci_evt.le_meta_subevent == 0x2)" -T fields -e bthci_evt.bd_addr -e bthci_evt.rssi -e btcommon.eir_ad.entry.device_name > "$FILENAME"
 
 
 
