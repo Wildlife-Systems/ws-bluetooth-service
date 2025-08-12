@@ -28,4 +28,4 @@ UNIQUE_COUNT=$(grep -v "lime-" "$INPUT_SOURCE" | \
                sort -u | \
                wc -l)
 
-echo "Unique BLE addresses: $UNIQUE_COUNT"
+echo "$UNIQUE_COUNT"
