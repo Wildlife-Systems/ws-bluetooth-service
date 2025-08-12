@@ -1,5 +1,5 @@
-ws-bluetooth-service (0.0.1) UNRELEASED; urgency=medium
+ws-bluetooth-service (0.1.1) stable; urgency=medium
 
   * Initial release.
 
- -- Edward Baker <ed@ebaker.me.uk>  Sat, 26 Jul 2025 11:41:57 +0100
+ -- Edward Baker <edwab@unp-pi-12.nhm.ac.uk>  Tue, 12 Aug 2025 14:34:08 +0100

@@ -1,8 +1,8 @@
 Package: ws-bluetooth-service
-Version: 0.0.1
+Version: 0.1.1
 Architecture: all
 Maintainer: Ed Baker <ed@ebaker.me.uk>
-Installed-Size: 18
+Installed-Size: 19
 Depends: tshark, bluez, coreutils, systemd
 Section: utils
 Priority: optional
