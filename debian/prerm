@@ -8,8 +8,6 @@ case "$1" in
         # Stop the timer and service using deb-systemd-invoke
         deb-systemd-invoke stop ws-bluetooth-scanner.timer >/dev/null || true
         deb-systemd-invoke stop ws-bluetooth-scanner.service >/dev/null || true
-        
-        echo "Bluetooth scanner timer has been stopped."
         ;;
     
     failed-upgrade)
