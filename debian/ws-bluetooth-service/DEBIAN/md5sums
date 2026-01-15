@@ -1,5 +1,0 @@
-d03a428e06189529fc275abc913665bd  lib/systemd/system/ws-bluetooth-scanner.service
-bfb97179de061e7a0e73329b32cd9384  lib/systemd/system/ws-bluetooth-scanner.timer
-e9b2bc6b667761bcfd2360dae2fed96b  usr/bin/ws-bluetooth-devices
-49e81d51e9c7619556c720a740dc72aa  usr/bin/ws-bluetooth-unique-count
-b8a94287884393154df825f9756d2941  usr/share/doc/ws-bluetooth-service/changelog.gz
