@@ -7,11 +7,6 @@ case "$1" in
     configure)
         # Make the script executable
         chmod +x /usr/bin/ws-bluetooth-devices
-        
-        # Enable the timer using deb-systemd-helper
-        deb-systemd-helper unmask ws-bluetooth-scanner.timer >/dev/null || true
-        deb-systemd-helper enable ws-bluetooth-scanner.timer >/dev/null || true
-        deb-systemd-invoke start ws-bluetooth-scanner.timer >/dev/null || true
         ;;
     
     abort-upgrade|abort-remove|abort-deconfigure)
