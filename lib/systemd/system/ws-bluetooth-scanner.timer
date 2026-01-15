@@ -3,7 +3,7 @@ Description=Run Bluetooth Scanner every minute
 Requires=ws-bluetooth-scanner.service
 
 [Timer]
-OnCalendar=*:*:00
+OnCalendar=minutely
 Persistent=true
 AccuracySec=1s
 
