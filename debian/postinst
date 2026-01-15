@@ -7,6 +7,12 @@ case "$1" in
     configure)
         # Make the script executable
         chmod +x /usr/bin/ws-bluetooth-devices
+        
+        # Remove old log directory (moved to /var/ws/bluetooth)
+        if [ -d /var/log/bluetooth-scanner ]; then
+            rm -rf /var/log/bluetooth-scanner
+            echo "Removed old log directory /var/log/bluetooth-scanner (now using /var/ws/bluetooth)"
+        fi
         ;;
     
     abort-upgrade|abort-remove|abort-deconfigure)

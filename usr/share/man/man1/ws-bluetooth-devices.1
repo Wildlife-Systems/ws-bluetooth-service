@@ -10,11 +10,13 @@ capturing advertising packets for 30 seconds.
 .PP
 The output is written to a log file named
 .I <hostname>-<timestamp>.log
-in the current directory. The log contains MAC addresses, RSSI values,
+in
+.I /var/ws/bluetooth/.
+The log contains MAC addresses, RSSI values,
 and device names of discovered BLE devices.
 .SH FILES
 .TP
-.I <hostname>-YYYYMMDD-HHMMSS.log
+.I /var/ws/bluetooth/<hostname>-YYYYMMDD-HHMMSS.log
 Output file containing discovered device information with fields:
 MAC address, RSSI, and device name (tab-separated).
 .SH DEPENDENCIES

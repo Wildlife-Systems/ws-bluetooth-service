@@ -4,6 +4,8 @@ Priority: optional
 Maintainer: Ed Baker <ed@ebaker.me.uk>
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.6.2
+Vcs-Git: https://github.com/NaturalHistoryMuseum/sensor-bluetooth_devices.git
+Vcs-Browser: https://github.com/NaturalHistoryMuseum/sensor-bluetooth_devices
 Description: Bluetooth device scanner for sensor monitoring
  A utility script that scans for Bluetooth devices and logs their
  information including MAC addresses, RSSI values, and device names.

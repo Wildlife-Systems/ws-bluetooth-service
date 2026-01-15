@@ -51,7 +51,7 @@ sudo journalctl -u ws-bluetooth-scanner.service -f
 ## What the Script Does
 
 The script will:
-1. Create the log directory `/var/log/bluetooth-scanner/` if it doesn't exist
+1. Create the log directory `/var/ws/bluetooth/` if it doesn't exist
 2. Generate a log file named with the hostname and current timestamp
 3. Capture Bluetooth Low Energy advertising packets using tshark
 4. Perform a Bluetooth LE scan using hcitool
@@ -66,12 +66,12 @@ The script will:
 
 ## Output
 
-The script creates log files in `/var/log/bluetooth-scanner/` containing:
+The script creates log files in `/var/ws/bluetooth/` containing:
 - Bluetooth device MAC addresses
 - RSSI values
 - Device names (when available)
 
-Log files are named: `/var/log/bluetooth-scanner/<hostname>-<YYYYMMDD-HHMMSS>.log`
+Log files are named: `/var/ws/bluetooth/<hostname>-<YYYYMMDD-HHMMSS>.log`
 
 ## Notes
 
