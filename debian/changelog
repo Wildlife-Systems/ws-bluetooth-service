@@ -1,3 +1,15 @@
+ws-bluetooth-service (0.2.0) UNRELEASED; urgency=medium
+
+  * Service disabled preset
+
+ -- Ed Baker <ed@ebaker.me.uk>  Thu, 15 Jan 2026 16:09:17 +0000
+
+ws-bluetooth-service (0.1.6) stable; urgency=medium
+
+  * Lintian /shellcheck improvements 
+
+ -- Ed Baker <ed@ebaker.me.uk>  Thu, 15 Jan 2026 15:14:25 +0000
+
 ws-bluetooth-service (0.1.5) stable; urgency=medium
 
   * Use /var/ws/bluetooth for data
