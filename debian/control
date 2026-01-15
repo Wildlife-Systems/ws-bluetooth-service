@@ -2,6 +2,7 @@ Source: ws-bluetooth-service
 Section: utils
 Priority: optional
 Maintainer: Ed Baker <ed@ebaker.me.uk>
+Standards-Version: 4.6.2
 Description: Bluetooth device scanner for sensor monitoring
  A utility script that scans for Bluetooth devices and logs their
  information including MAC addresses, RSSI values, and device names.
