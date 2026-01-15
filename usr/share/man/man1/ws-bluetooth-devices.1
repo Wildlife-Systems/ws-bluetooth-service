@@ -1,0 +1,31 @@
+.TH WS-BLUETOOTH-DEVICES 1 "January 2026" "ws-bluetooth-service 0.1.2" "User Commands"
+.SH NAME
+ws-bluetooth-devices \- scan for Bluetooth Low Energy devices
+.SH SYNOPSIS
+.B ws-bluetooth-devices
+.SH DESCRIPTION
+.B ws-bluetooth-devices
+scans for Bluetooth Low Energy (BLE) devices using hcitool and tshark,
+capturing advertising packets for 30 seconds.
+.PP
+The output is written to a log file named
+.I <hostname>-<timestamp>.log
+in the current directory. The log contains MAC addresses, RSSI values,
+and device names of discovered BLE devices.
+.SH FILES
+.TP
+.I <hostname>-YYYYMMDD-HHMMSS.log
+Output file containing discovered device information with fields:
+MAC address, RSSI, and device name (tab-separated).
+.SH DEPENDENCIES
+Requires
+.B tshark
+and
+.B hcitool
+(from the bluez package) to be installed.
+.SH SEE ALSO
+.BR ws-bluetooth-unique-count (1),
+.BR hcitool (1),
+.BR tshark (1)
+.SH AUTHOR
+Ed Baker <ed@ebaker.me.uk>
