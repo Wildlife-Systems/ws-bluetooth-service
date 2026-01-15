@@ -1,23 +1,7 @@
 #!/bin/bash
-# prerm script for bluetooth-sensor-scanner
+# prerm script for ws-bluetooth-service
 
 set -e
-
-case "$1" in
-    remove|upgrade|deconfigure)
-        # Stop the timer and service using deb-systemd-invoke
-        deb-systemd-invoke stop ws-bluetooth-scanner.timer >/dev/null || true
-        deb-systemd-invoke stop ws-bluetooth-scanner.service >/dev/null || true
-        ;;
-    
-    failed-upgrade)
-        ;;
-    
-    *)
-        echo "prerm called with unknown argument \`$1'" >&2
-        exit 1
-        ;;
-esac
 
 #DEBHELPER#
 

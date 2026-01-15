@@ -1,28 +1,10 @@
 #!/bin/bash
-# postrm script for bluetooth-sensor-scanner
+# postrm script for ws-bluetooth-service
 
 set -e
 
-case "$1" in
-    remove)
-        # Disable the timer on removal
-        deb-systemd-helper disable ws-bluetooth-scanner.timer >/dev/null || true
-        ;;
-    
-    purge)
-        # Fully clean up on purge
-        deb-systemd-helper purge ws-bluetooth-scanner.timer >/dev/null || true
-        deb-systemd-helper unmask ws-bluetooth-scanner.timer >/dev/null || true
-        ;;
-    
-    upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
-        ;;
-    
-    *)
-        echo "postrm called with unknown argument \`$1'" >&2
-        exit 1
-        ;;
-esac
+# Systemd daemon-reload is handled automatically by dpkg triggers
+# when files in /lib/systemd/system/ are modified
 
 #DEBHELPER#
 
