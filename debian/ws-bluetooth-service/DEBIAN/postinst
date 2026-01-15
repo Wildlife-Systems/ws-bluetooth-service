@@ -9,12 +9,10 @@ case "$1" in
         chmod +x /usr/bin/ws-bluetooth-devices
         chmod +x /usr/bin/ws-bluetooth-unique-count
         
-        # Reload systemd configuration
-        systemctl daemon-reload
-        
-        # Enable and start the timer
-        systemctl enable ws-bluetooth-scanner.timer
-        systemctl start ws-bluetooth-scanner.timer
+        # Enable the timer using deb-systemd-helper
+        deb-systemd-helper unmask ws-bluetooth-scanner.timer >/dev/null || true
+        deb-systemd-helper enable ws-bluetooth-scanner.timer >/dev/null || true
+        deb-systemd-invoke start ws-bluetooth-scanner.timer >/dev/null || true
         
         echo "Bluetooth scanner timer has been enabled and started."
         echo "It will run every minute. Check status with:"
