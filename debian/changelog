@@ -1,3 +1,9 @@
+ws-bluetooth-service (0.1.4) stable; urgency=medium
+
+  * Don't automatically start service 
+
+ -- Ed Baker <ed@ebaker.me.uk>  Thu, 15 Jan 2026 10:45:20 +0000
+
 ws-bluetooth-service (0.1.3) stable; urgency=medium
 
   * Handle systemd properly 
