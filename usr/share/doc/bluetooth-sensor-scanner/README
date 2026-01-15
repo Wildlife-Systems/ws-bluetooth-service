@@ -10,8 +10,11 @@ Run the scanner manually:
 ws-bluetooth-devices
 ```
 
-### Automatic Execution (Default)
-After installation, the scanner automatically runs every minute via systemd timer.
+### Automatic Execution
+The timer is **not enabled by default**. To enable automatic scanning every minute:
+```bash
+sudo systemctl enable --now ws-bluetooth-scanner.timer
+```
 
 ## Systemd Integration
 
