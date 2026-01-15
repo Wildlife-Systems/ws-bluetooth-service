@@ -1,2 +1,4 @@
 debian/.debhelper/
 debian/ws-bluetooth-service/
+debin/files
+debian/debhelper-build-stamp

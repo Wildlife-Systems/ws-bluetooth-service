@@ -1,4 +1,0 @@
-./usr/bin/ws-bluetooth-devices
-./usr/bin/ws-bluetooth-unique-count
-./lib/systemd/system/ws-bluetooth-scanner.service
-./lib/systemd/system/ws-bluetooth-scanner.timer
