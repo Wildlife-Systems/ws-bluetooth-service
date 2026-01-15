@@ -2,6 +2,13 @@
 
 # Generate filename based on hostname and current timestamp
 FILENAME="$(hostname)-$(date +%Y%m%d-%H%M%S).log"
+
+# FIlename is in /var/ws/bluetooth/
+FILENAME="/var/ws/bluetooth/$FILENAME"
+
+# Ensure the output directory exists
+mkdir -p /var/ws/bluetooth
+
 timeout 30 hcitool lescan &
 
 timeout 30 tshark -i bluetooth0 -Y "(bthci_evt.code == 0x2f) || (bthci_evt.le_meta_subevent == 0x2)" -T fields -e bthci_evt.bd_addr -e bthci_evt.rssi -e btcommon.eir_ad.entry.device_name > "$FILENAME"
